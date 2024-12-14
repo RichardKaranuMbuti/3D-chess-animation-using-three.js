@@ -24,60 +24,59 @@ Before running this project, make sure you have:
 
 - Node.js and npm installed
 - Visual Studio Code
-- Live Server extension for VS Code
-
-## Project Structure
-
-```
-3d-chess/
-├── index.html
-├── styles.css
-├── chess.js
-└── models/
-    └── pawn.obj
-```
+- python3 to run server and expose ports
 
 ## Installation
 
 1. Clone the repository or download the project files
 
+```bash
+git@github.com:RichardKaranuMbuti/3D-chess-animation-using-three.js.git
+```
+
 2. Open terminal in the project directory and run:
+
 ```bash
 npm install
 ```
 
-3. Install the Live Server extension in VS Code:
-   - Open VS Code
-   - Click on Extensions icon (or press Ctrl+Shift+X)
-   - Search for "Live Server"
-   - Install the extension by Ritwick Dey
+3. While in base_dir run
+
+```python
+python3 -m http.server 8000
+
+```
+
+- The project typically runs at `http://0.0.0.0:8000/`
+- This will start a local server and open the project in your default browser
 
 ## Running the Project
 
-1. Open the project folder in VS Code
+To access round_2 version of the project :
 
-2. Right-click on `index.html` in the VS Code file explorer
+- click the project folder saved as round_2
 
-3. Select "Open with Live Server"
-   - This will start a local server and open the project in your default browser
-   - The project typically runs at `http://127.0.0.1:5500` or similar
+- or you can directly visit `http://0.0.0.0:8000/round_2/`
 
 ## Controls
 
 - **Mouse Controls:**
-  - Left click + drag: Rotate camera
-  - Right click + drag: Pan camera
-  - Scroll wheel: Zoom in/out
+
+  - Mouse: Left-click drag to rotate
+  - Mouse wheel: Zoom
 
 - **Keyboard Controls:**
-  - `0`: Top view
-  - `1`: Player 1 view (white side)
-  - `2`: Player 2 view (black side)
-  - `3`: Side view
+  - 0: Top view
+  - 1: White player view
+  - 2: Black player view
+  - 3: Side view
+  - R: Reset pieces
+  - Space: Start/Stop animation
 
 ## How It Works
 
 1. Initial Setup:
+
    - White and black pawns are loaded and placed outside the board
    - The board is created with alternating colored squares
    - Multiple camera positions are set up for different viewing angles
@@ -85,7 +84,6 @@ npm install
 2. Animation Sequence:
    - Pawns gradually move onto the board
    - Random movements occur between board positions
-   - Pieces can be "captured" and moved to outside positions
    - All movements feature smooth, arcing animations
 
 ## Technical Details
